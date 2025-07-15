@@ -42,8 +42,6 @@ The script will download your regular projects into an `./active` folder, and wi
 
 ### Interactive mode
 
-### Interactive mode
-
 You can invoke the script by calling:
 
 ```
@@ -86,9 +84,11 @@ Asset URLs are not automatically replaced in any source code, mostly because tha
 
 You can use regular expression to easily replace many CDN urls at once. Either with regex101 online at https://regex101.com or in your IDE with find and replace.
 
-**Find:** `https:\/\/cdn\.glitch\.global\/<Enter your unique 36 character url id here>\/([a-zA-Z0-9_-]*\.[a-zA-Z0-9]+).*`
+**Find:** `https:\/\/cdn\.glitch\.global\/.{36}\/([a-zA-Z0-9_-]*\.[a-zA-Z0-9]+).*`
 
 **Replace:** `glitch-assets/$1"`
+
+**WARNING:** If your filenames contain spaces or special characters, they may appear as URL encoding like `%20` (space), `%28` (opening parenthesis), etc. After running the regex replacement, you may need to manually decode these or do a second find-replace for `%20` → ` ` (space)
 
 ---
 
