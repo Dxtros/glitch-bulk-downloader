@@ -86,7 +86,7 @@ Asset URLs are not automatically replaced in any source code, mostly because tha
 
 You can use regular expression to easily replace many CDN urls at once. Either with regex101 online at https://regex101.com or in your IDE with find and replace.
 
-**Find:** `https:\/\/cdn\.glitch\.global\/<Enter your unique 36 character url id here>\/([a-zA-Z0-9_-]*\.[a-zA-Z0-9]+).*`
+**Find:** `https:\/\/cdn\.glitch\.global\/.{36}\/([a-zA-Z0-9_-]*\.[a-zA-Z0-9]+).*`
 
 **Replace:** `glitch-assets/$1"`
 
